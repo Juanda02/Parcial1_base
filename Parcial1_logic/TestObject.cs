@@ -7,6 +7,9 @@ namespace Parcial1_logic
     {
         public static void Main(string[] args)
         {
+            
+
+
             //Puede hacer llamados aquí para probar su código, aunque se recomienda correr las pruebas.
 
             Console.ReadKey();
@@ -30,9 +33,36 @@ namespace Parcial1_logic
         /// <returns>La lista de entrada con los valores modificados</returns>
         public Queue<int> ReplaceInQueue(Queue<int> inputQueue, int lookupValue, int replaceValue)
         {
-            //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
 
-            return null;
+            int recorrido = inputQueue.Count;
+            Queue<int> cola2 = new Queue<int>(recorrido);
+
+           for(lookupValue=0;lookupValue<=inputQueue.Count;lookupValue++)
+            {
+                int evaluado = inputQueue.Dequeue();
+
+                if (evaluado == lookupValue)
+                {
+
+                    cola2.Enqueue(evaluado);
+
+                }
+                else
+                {
+
+                    cola2.Enqueue(evaluado);
+
+                }
+
+                
+
+            }
+
+
+
+            //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
+            return cola2;
+
         }
 
         /// <summary>
@@ -42,8 +72,20 @@ namespace Parcial1_logic
         /// <returns>Una pila con los valores de 'stack' invertidos</returns>
         public Stack<string> InverseStack(Stack<string> stack)
         {
+
+            Stack<string> inverse = new Stack<string>();
+            while (stack.Count > 0)
+            {
+                inverse.Push(stack.Pop());
+            }
+            return inverse;
+
+
             //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
-            return null;
+
+
+
+
         }
 
         /// <summary>
@@ -55,8 +97,18 @@ namespace Parcial1_logic
         /// <returns>Una lista con datos intercalados de 'stack' y 'queue'</returns>
         public List<string> MixData(Stack<string> stack, Queue<string> queue)
         {
+
+            List<string> mixList = new List<string>();
+            for (int i = 0; i < queue.Count; i++)
+            {
+                mixList.Add(stack.Pop());
+                mixList.Add(queue.Dequeue());
+            }
+            return mixList;
+
+
             //NOTA: Para la solución NO SE PERMITE USAR el método ToArray().
-            return null;
+            
         }
 
         /// <summary>
