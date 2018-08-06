@@ -2,5 +2,12 @@
 {
     public interface ICharacter
     {
+
+
+        void Mover(MovementType moverPersonaje);
+
+        
+
+
     }
 }
